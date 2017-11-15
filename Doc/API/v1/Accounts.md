@@ -12,7 +12,7 @@ Used to retrive account informations. {account_id} must be replaced by the accou
 ### Example request
 
 ```bash
-curl -H 'Content-Type: application/json' -X GET https://xxxx/v1/accounts/42
+curl -H 'Content-Type: application/json' -X GET https://ffs-api.zerator.com/v1/accounts/42
 ```
 
 ### Example Response
@@ -33,7 +33,7 @@ Update the informations of the account linked to the {account_id} id. This metho
 
 ```bash
 curl -H 'Content-Type: application/json' -X POST -d '{"username":"test","email":"test@test.test","grade":4000}' \
- https://xxxx/v1/accounts/42
+ https://ffs-api.zerator.com/v1/accounts/42
 ```
 
 ### Example Response

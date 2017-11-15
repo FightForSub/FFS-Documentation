@@ -11,7 +11,7 @@ Get the account informations
 ### Example request
 
 ```bash
-curl -H 'Content-Type: application/json' -X GET https://xxxx/v1/me
+curl -H 'Content-Type: application/json' -X GET https://ffs-api.zerator.com/v1/me
 ```
 
 ### Example Response
@@ -33,7 +33,7 @@ Update account informations
 ### Example request
 
 ```bash
-curl -H 'Content-Type: application/json' -X PUT  -d '{"username":"test","email":"test@test.test","current_password":"current_password"}' https://xxxx/v1/me
+curl -H 'Content-Type: application/json' -X PUT  -d '{"username":"test","email":"test@test.test","current_password":"current_password"}' https://ffs-api.zerator.com/v1/me
 ```
 
 ### Example Response
