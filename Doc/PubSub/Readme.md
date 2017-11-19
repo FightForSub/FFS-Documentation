@@ -1,7 +1,7 @@
 # PubSub documentation
 
 PubSub service enable applications to subscribe to events on the FFS network.  
-It's a secure Websocket service accessible using this address: wss://pubsub-ffs.zerator.com  
+It's a secure Websocket service accessible using this address: wss://pubsub-ffs.zerator.com or on the test server: wss://pubsub-ffs-test.zerator.com/  
 
 Each packets sended by the client or the server must be encoded in Json format. If a non-json or an unknown packet is sent to the server, the client will be disconnected.
 
