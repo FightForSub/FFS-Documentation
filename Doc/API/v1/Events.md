@@ -335,20 +335,16 @@ curl -H 'Content-Type: application/json' -X GET \
 ### Example Response
 
 ```json
-[
-	{
-		"rounds": "1": [
-			"scores": [
-			  {
-			    "username": "AlexMogTV",
-			    "url": "https://www.twitch.tv/alexmogtv",
-			    "id": 42,
-			    "score": 74010347
-			  }
-			]
-		]
-	}
-]
+{
+	"1": [
+	  {
+	    "username": "AlexMogTV",
+	    "url": "https://www.twitch.tv/alexmogtv",
+	    "id": 42,
+	    "score": 74010347
+	  }
+	]
+}
 ```
 
 ## `POST /event/{EVENT_ID}/rounds`
