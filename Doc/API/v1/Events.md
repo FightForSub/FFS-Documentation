@@ -96,7 +96,8 @@ curl -H 'Content-Type: application/json' -X GET \
   "reservedToAffiliates": false,
   "reservedToPartners": false,
   "status": "OPEN",
-  "current": false
+  "current": false,
+  "ranking_type": "SCORE_ASC"
 }
 
 ```
@@ -108,7 +109,7 @@ Update an event.
 ### Example request
 
 ```bash
-curl -H 'Content-Type: application/json' -X PUT -d '{"name":"test", "description":"test", "current": false, "reserved_to_affiliates": false, "reserved_to_partners": false, "status": "CLOSED"}' \
+curl -H 'Content-Type: application/json' -X PUT -d '{"name":"test", "description":"test", "current": false, "reserved_to_affiliates": false, "reserved_to_partners": false, "status": "CLOSED", "ranking_type": "SCORE_ASC"}' \
  https://ffs-api.zerator.com/v1/event/3
 ```
 
@@ -335,7 +336,18 @@ curl -H 'Content-Type: application/json' -X GET \
 
 ```json
 [
-  1
+	{
+		"rounds": "1": [
+			"scores": [
+			  {
+			    "username": "AlexMogTV",
+			    "url": "https://www.twitch.tv/alexmogtv",
+			    "id": 42,
+			    "score": 74010347
+			  }
+			]
+		]
+	}
 ]
 ```
 
