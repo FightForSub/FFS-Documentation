@@ -14,6 +14,8 @@
 [PUT /event/{EVENT\\_ID}/user/{USER\\_ID}](/Doc/API/v1/Events.md#delete-event) - Update registered user's data  
 [DELETE /event/{EVENT\\_ID}/user/{USER\\_ID}](/Doc/API/v1/Events.md#delete-event) - Remove registered user  
 
+[POST /event/{EVENT_ID}/check_subscription](/Doc/API/v1/Events.md#delete-event) - Verify the subscription to the winner of the event
+
 [GET /event/{EVENT_ID}/rounds](/Doc/API/v1/Events.md#get-events-rounds) - Get event rounds  
 [POST /event/{EVENT_ID}/rounds](/Doc/API/v1/Events.md#get-events-rounds) - Add a new round to the event  
 
@@ -320,6 +322,47 @@ curl -H 'Content-Type: application/json' -X DELETE \
   "redirection": false
 }
 ```
+
+## `POST /event/{EVENT_ID}/check_subscription`
+
+Check the user subscription to the winner of the event.
+The user is based on the OAuth token.
+
+The TWITCH_TOKEN require the scope : `user_subscriptions`
+
+### Example request
+
+```bash
+curl -H 'Content-Type: application/json' -X POST -d '{"twitch_token":"TWITCH_TOKEN"}' \
+ https://ffs-api.zerator.com/v1/event/3/check_subscription
+```
+
+### Example Responses
+
+```json
+{
+  "code": 200,
+  "description": "The request has succeeded",
+  "reasonPhrase": "OK",
+  "throwable": null,
+  "uri": "http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1",
+  "error": false,
+  "success": true,
+  "informational": false,
+  "globalError": false,
+  "clientError": false,
+  "serverError": false,
+  "connectorError": false,
+  "redirection": false,
+  "recoverableError": false
+}
+```
+### Errors
+
+400: Bad authentication.  
+404: The user is not subscribe to the winner.  
+409: Winner not defined or event not ended yet (`"WINNER_NOT_DEFINED"` or `"EVENT_NOT_ENDED"`).  
+422: A bad entity was passed to the HTTP body. (Not JSON, or missing fields)
 
 ## `GET /event/{EVENT_ID}/rounds`
 
